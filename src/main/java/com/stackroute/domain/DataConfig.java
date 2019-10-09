@@ -1,6 +1,5 @@
 package com.stackroute.domain;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,22 +7,43 @@ import org.springframework.context.annotation.Configuration;
 public class DataConfig {
 
     @Bean
-    public Actor act_obj(){
-        Actor act_obj = new Actor();
-        act_obj.setName("Rajender");
-        act_obj.setAge(22);
-        act_obj.setGender("male");
-        System.out.println("inside actor bean");
-        return act_obj;
+    public Actor actobj(){
+        Actor actobj = new Actor();
+        actobj.setName("Rajender");
+        actobj.setAge(22);
+        actobj.setGender("male");
+        return actobj;
+    }
+
+    @Bean
+    public Actor act2(){
+        Actor actobj = new Actor();
+        actobj.setName("Santhosh");
+        actobj.setAge(17);
+        actobj.setGender("male");
+        return actobj;
+    }
+
+    @Bean
+    public Actor act3(){
+        Actor actobj = new Actor();
+        actobj.setName("raj");
+        actobj.setAge(23);
+        actobj.setGender("male");
+        return actobj;
     }
 
     @Bean
     public Movie moviebean(){
-        Movie movieBean = new Movie(act_obj());
-        System.out.println("inside movie bean");
+        Movie movieBean = new Movie(actobj());
         return movieBean;
     }
 
+    @Bean
+    public Movie moviebean2(){
+        Movie movieBean2 = new Movie(act3());
+        return movieBean2;
+    }
 
 
 }
